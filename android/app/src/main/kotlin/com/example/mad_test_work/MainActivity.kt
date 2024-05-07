@@ -1,4 +1,4 @@
-package com.example.mad_test_work
+package com.example.effective_test_work
 
 import io.flutter.embedding.android.FlutterActivity
 

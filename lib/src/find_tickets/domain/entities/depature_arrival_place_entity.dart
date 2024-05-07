@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:mad_test_work/core/enums/airports.dart';
+import 'package:effective_test_work/core/enums/airports.dart';
 
 part 'depature_arrival_place_entity.freezed.dart';
 

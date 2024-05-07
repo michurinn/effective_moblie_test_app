@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mad_test_work/core/extensions/string_exttensions.dart';
+import 'package:effective_test_work/core/extensions/string_exttensions.dart';
 
 class ErrorPageView extends StatelessWidget {
   const ErrorPageView({super.key});

@@ -1,5 +1,5 @@
 
-import 'package:mad_test_work/core/failtures/failures.dart';
+import 'package:effective_test_work/core/failtures/failures.dart';
 
 /// Type for data mapper function.
 typedef DataMapper<R, TData> = R Function(TData value);

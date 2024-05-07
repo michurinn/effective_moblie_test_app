@@ -1,6 +1,6 @@
-import 'package:mad_test_work/core/converters/converter.dart';
-import 'package:mad_test_work/src/find_tickets/data/model/requested_offer_dto.dart';
-import 'package:mad_test_work/src/find_tickets/domain/entities/requested_offer_entity.dart';
+import 'package:effective_test_work/core/converters/converter.dart';
+import 'package:effective_test_work/src/find_tickets/data/model/requested_offer_dto.dart';
+import 'package:effective_test_work/src/find_tickets/domain/entities/requested_offer_entity.dart';
 
 typedef IRequestedOfferConverter
     = Converter<RequestedOfferEntity, RequestedOfferDTO>;

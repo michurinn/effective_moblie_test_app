@@ -1,4 +1,4 @@
-# mad_test_work
+# effective_test_work
 
 1. Используется пакет freezed для генерации дата-классов и методов fromJson и toJson.
 2. В качестве http клиента используется пакет Dio 

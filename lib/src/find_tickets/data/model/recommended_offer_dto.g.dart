@@ -10,7 +10,8 @@ RecommendedOfferDTO _$RecommendedOfferDTOFromJson(Map<String, dynamic> json) =>
     RecommendedOfferDTO(
       id: (json['id'] as num).toInt(),
       title: json['title'] as String,
-      price: (json['price'] as num).toInt(),
+      price: RecommendedOfferDTO.priceFromJson(
+          json['price'] as Map<String, dynamic>),
       city: json['town'] as String,
     );
 

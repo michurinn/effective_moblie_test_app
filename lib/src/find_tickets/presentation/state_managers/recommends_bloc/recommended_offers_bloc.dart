@@ -6,10 +6,10 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:equatable/equatable.dart';
-import 'package:mad_test_work/core/architecture/domain/entity/result.dart';
-import 'package:mad_test_work/core/failtures/failures.dart';
-import 'package:mad_test_work/src/find_tickets/domain/entities/recommended_offer_entity.dart';
-import 'package:mad_test_work/src/find_tickets/domain/repositories/i_recommends_repository.dart';
+import 'package:effective_test_work/core/architecture/domain/entity/result.dart';
+import 'package:effective_test_work/core/failtures/failures.dart';
+import 'package:effective_test_work/src/find_tickets/domain/entities/recommended_offer_entity.dart';
+import 'package:effective_test_work/src/find_tickets/domain/repositories/i_recommends_repository.dart';
 
 part 'recommended_offers_events.dart';
 part 'recommended_offers_state.dart';
