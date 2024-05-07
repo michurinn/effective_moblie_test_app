@@ -21,9 +21,9 @@ class _ITicketsApi implements ITicketsApi {
   String? baseUrl;
 
   @override
-  Future<List<TicketDTO>> getTickets([String format = 'json']) async {
+  Future<List<TicketDTO>> getTickets() async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'format': format};
+    final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result =
@@ -50,14 +50,13 @@ class _ITicketsApi implements ITicketsApi {
   }
 
   @override
-  Future<List<RecommendedOfferDTO>> getRecommendedTickets(
-      [String format = 'json']) async {
+  Future<ListRecommendedOfferDTO> getRecommendedTickets() async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'format': format};
+    final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<List<dynamic>>(_setStreamType<List<RecommendedOfferDTO>>(Options(
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<ListRecommendedOfferDTO>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -73,18 +72,14 @@ class _ITicketsApi implements ITicketsApi {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    var value = _result.data!
-        .map((dynamic i) =>
-            RecommendedOfferDTO.fromJson(i as Map<String, dynamic>))
-        .toList();
+    final value = ListRecommendedOfferDTO.fromJson(_result.data!);
     return value;
   }
 
   @override
-  Future<List<RequestedOfferDTO>> getRequestedTickets(
-      [String format = 'json']) async {
+  Future<List<RequestedOfferDTO>> getRequestedTickets() async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'format': format};
+    final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio
