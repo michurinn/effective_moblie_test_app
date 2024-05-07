@@ -1,12 +1,12 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mad_test_work/api/tickets_api.dart';
-import 'package:mad_test_work/core/architecture/domain/entity/result.dart';
-import 'package:mad_test_work/core/failtures/failures.dart';
-import 'package:mad_test_work/src/find_tickets/data/repository/tickets_repository.dart';
+import 'package:effective_test_work/api/tickets_api.dart';
+import 'package:effective_test_work/core/architecture/domain/entity/result.dart';
+import 'package:effective_test_work/core/failtures/failures.dart';
+import 'package:effective_test_work/src/find_tickets/data/repository/tickets_repository.dart';
 import 'package:mockito/annotations.dart';
-import 'package:mad_test_work/src/find_tickets/data/model/ticket_dto.dart';
-import 'package:mad_test_work/src/find_tickets/domain/converters/ticket_converter.dart';
-import 'package:mad_test_work/src/find_tickets/domain/entities/ticket_entity.dart';
+import 'package:effective_test_work/src/find_tickets/data/model/ticket_dto.dart';
+import 'package:effective_test_work/src/find_tickets/domain/converters/ticket_converter.dart';
+import 'package:effective_test_work/src/find_tickets/domain/entities/ticket_entity.dart';
 import 'package:mockito/mockito.dart';
 
 import 'tickets_repository_test.mocks.dart';

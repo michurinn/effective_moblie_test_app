@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mad_test_work/core/converters/converter.dart';
-import 'package:mad_test_work/src/find_tickets/data/model/ticket_dto.dart';
-import 'package:mad_test_work/src/find_tickets/domain/converters/ticket_converter.dart';
-import 'package:mad_test_work/src/find_tickets/domain/entities/ticket_entity.dart';
+import 'package:effective_test_work/core/converters/converter.dart';
+import 'package:effective_test_work/src/find_tickets/data/model/ticket_dto.dart';
+import 'package:effective_test_work/src/find_tickets/domain/converters/ticket_converter.dart';
+import 'package:effective_test_work/src/find_tickets/domain/entities/ticket_entity.dart';
 
 void main() {
   late Converter<TicketEntity, TicketDTO> ticketConverter;

@@ -1,9 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mad_test_work/core/architecture/domain/entity/result.dart';
-import 'package:mad_test_work/core/failtures/failures.dart';
-import 'package:mad_test_work/src/find_tickets/domain/entities/recommended_offer_entity.dart';
-import 'package:mad_test_work/src/find_tickets/domain/repositories/i_recommends_repository.dart';
-import 'package:mad_test_work/src/find_tickets/presentation/state_managers/recommends_bloc/recommended_offers_bloc.dart';
+import 'package:effective_test_work/core/architecture/domain/entity/result.dart';
+import 'package:effective_test_work/core/failtures/failures.dart';
+import 'package:effective_test_work/src/find_tickets/domain/entities/recommended_offer_entity.dart';
+import 'package:effective_test_work/src/find_tickets/domain/repositories/i_recommends_repository.dart';
+import 'package:effective_test_work/src/find_tickets/presentation/state_managers/recommends_bloc/recommended_offers_bloc.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'recommended_offers_bloc_test.mocks.dart';

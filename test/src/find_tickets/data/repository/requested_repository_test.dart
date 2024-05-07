@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mad_test_work/api/tickets_api.dart';
-import 'package:mad_test_work/core/architecture/domain/entity/result.dart';
-import 'package:mad_test_work/src/find_tickets/data/repository/requested_repostory.dart';
-import 'package:mad_test_work/src/find_tickets/domain/converters/requested_offer_converter.dart';
+import 'package:effective_test_work/api/tickets_api.dart';
+import 'package:effective_test_work/core/architecture/domain/entity/result.dart';
+import 'package:effective_test_work/src/find_tickets/data/repository/requested_repostory.dart';
+import 'package:effective_test_work/src/find_tickets/domain/converters/requested_offer_converter.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 

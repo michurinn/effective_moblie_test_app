@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mad_test_work/src/find_tickets/data/model/recommended_offer_dto.dart';
-import 'package:mad_test_work/src/find_tickets/domain/converters/recommended_offer_converter.dart';
-import 'package:mad_test_work/src/find_tickets/domain/entities/recommended_offer_entity.dart';
+import 'package:effective_test_work/src/find_tickets/data/model/recommended_offer_dto.dart';
+import 'package:effective_test_work/src/find_tickets/domain/converters/recommended_offer_converter.dart';
+import 'package:effective_test_work/src/find_tickets/domain/entities/recommended_offer_entity.dart';
 
 void main() {
   late IRecommendedOfferConverter ticketConverter;
