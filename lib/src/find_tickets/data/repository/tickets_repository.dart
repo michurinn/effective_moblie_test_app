@@ -1,10 +1,10 @@
-import 'package:mad_test_work/api/tickets_api.dart';
-import 'package:mad_test_work/core/architecture/domain/entity/request_operation.dart';
-import 'package:mad_test_work/core/architecture/domain/entity/result.dart';
-import 'package:mad_test_work/core/failtures/failures.dart';
-import 'package:mad_test_work/src/find_tickets/domain/converters/ticket_converter.dart';
-import 'package:mad_test_work/src/find_tickets/domain/entities/ticket_entity.dart';
-import 'package:mad_test_work/src/find_tickets/domain/repositories/i_tickets_repository.dart';
+import 'package:effective_test_work/api/tickets_api.dart';
+import 'package:effective_test_work/core/architecture/domain/entity/request_operation.dart';
+import 'package:effective_test_work/core/architecture/domain/entity/result.dart';
+import 'package:effective_test_work/core/failtures/failures.dart';
+import 'package:effective_test_work/src/find_tickets/domain/converters/ticket_converter.dart';
+import 'package:effective_test_work/src/find_tickets/domain/entities/ticket_entity.dart';
+import 'package:effective_test_work/src/find_tickets/domain/repositories/i_tickets_repository.dart';
 
 final class TicketsRepository implements ITicketsRepository {
   final ITicketConverter ticketsConverter;
