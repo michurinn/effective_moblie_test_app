@@ -10,7 +10,8 @@ RequestedOfferDTO _$RequestedOfferDTOFromJson(Map<String, dynamic> json) =>
     RequestedOfferDTO(
       id: (json['id'] as num).toInt(),
       title: json['title'] as String,
-      price: (json['price'] as num).toInt(),
+      price: RequestedOfferDTO.priceFromJson(
+          json['price'] as Map<String, dynamic>),
       timeRange: (json['time_range'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),

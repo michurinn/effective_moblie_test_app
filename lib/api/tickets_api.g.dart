@@ -21,13 +21,13 @@ class _ITicketsApi implements ITicketsApi {
   String? baseUrl;
 
   @override
-  Future<List<TicketDTO>> getTickets() async {
+  Future<ListTicketsDTO> getTickets() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
-    final _result =
-        await _dio.fetch<List<dynamic>>(_setStreamType<List<TicketDTO>>(Options(
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<ListTicketsDTO>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -43,9 +43,7 @@ class _ITicketsApi implements ITicketsApi {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    var value = _result.data!
-        .map((dynamic i) => TicketDTO.fromJson(i as Map<String, dynamic>))
-        .toList();
+    final value = ListTicketsDTO.fromJson(_result.data!);
     return value;
   }
 
@@ -77,13 +75,13 @@ class _ITicketsApi implements ITicketsApi {
   }
 
   @override
-  Future<List<RequestedOfferDTO>> getRequestedTickets() async {
+  Future<ListRequestedOfferDTO> getRequestedTickets() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<List<dynamic>>(_setStreamType<List<RequestedOfferDTO>>(Options(
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<ListRequestedOfferDTO>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -99,10 +97,7 @@ class _ITicketsApi implements ITicketsApi {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    var value = _result.data!
-        .map((dynamic i) =>
-            RequestedOfferDTO.fromJson(i as Map<String, dynamic>))
-        .toList();
+    final value = ListRequestedOfferDTO.fromJson(_result.data!);
     return value;
   }
 

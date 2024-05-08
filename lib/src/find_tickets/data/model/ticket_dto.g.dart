@@ -8,11 +8,11 @@ part of 'ticket_dto.dart';
 
 TicketDTO _$TicketDTOFromJson(Map<String, dynamic> json) => TicketDTO(
       id: (json['id'] as num).toInt(),
-      badge: json['badge'] as String,
-      price: (json['price'] as num).toInt(),
+      badge: json['badge'] as String?,
+      price: TicketDTO.priceFromJson(json['price'] as Map<String, dynamic>),
       providerName: json['provider_name'] as String,
       company: json['company'] as String,
-      depature: json['depature'] as Map<String, dynamic>,
+      departure: json['departure'] as Map<String, dynamic>,
       arrival: json['arrival'] as Map<String, dynamic>,
       hasTransfer: json['has_transfer'] as bool,
       hasVisaTransfer: json['has_visa_transfer'] as bool,
@@ -28,7 +28,7 @@ abstract final class _$TicketDTOJsonKeys {
   static const String price = 'price';
   static const String providerName = 'provider_name';
   static const String company = 'company';
-  static const String depature = 'depature';
+  static const String departure = 'departure';
   static const String arrival = 'arrival';
   static const String hasTransfer = 'has_transfer';
   static const String hasVisaTransfer = 'has_visa_transfer';
@@ -44,7 +44,7 @@ Map<String, dynamic> _$TicketDTOToJson(TicketDTO instance) => <String, dynamic>{
       'price': instance.price,
       'provider_name': instance.providerName,
       'company': instance.company,
-      'depature': instance.depature,
+      'departure': instance.departure,
       'arrival': instance.arrival,
       'has_transfer': instance.hasTransfer,
       'has_visa_transfer': instance.hasVisaTransfer,

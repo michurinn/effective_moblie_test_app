@@ -2,16 +2,17 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'ticket_dto.g.dart';
 
-
 @JsonSerializable(createJsonKeys: true)
 class TicketDTO {
   final int id;
-  final String badge;
+  final String? badge;
+  @JsonKey(fromJson: priceFromJson)
   final int price;
   @JsonKey(name: 'provider_name')
   final String providerName;
   final String company;
-  final Map<String, dynamic> depature;
+  @JsonKey(name: 'departure')
+  final Map<String, dynamic> departure;
   final Map<String, dynamic> arrival;
   @JsonKey(name: 'has_transfer')
   final bool hasTransfer;
@@ -30,7 +31,7 @@ class TicketDTO {
     required this.price,
     required this.providerName,
     required this.company,
-    required this.depature,
+    required this.departure,
     required this.arrival,
     required this.hasTransfer,
     required this.hasVisaTransfer,
@@ -40,7 +41,35 @@ class TicketDTO {
     required this.isExchangable,
   });
 
-  factory TicketDTO.fromJson(Map<String, dynamic> json) => _$TicketDTOFromJson(json);
+  static int priceFromJson(Map<String, dynamic> price) {
+    return price['value'] as int;
+  }
+
+  factory TicketDTO.fromJson(Map<String, dynamic> json) =>
+      _$TicketDTOFromJson(json);
 
   Map<String, dynamic> toJson() => _$TicketDTOToJson(this);
+
+  @override
+  String toString() {
+    return [
+      id,
+      badge,
+      price,
+      providerName,
+      company,
+      departure,
+      arrival,
+      hasTransfer,
+      hasVisaTransfer,
+      luggage,
+      handLuggage,
+      isReturnable,
+      isExchangable
+    ]
+        .map(
+          (e) => 'e\n',
+        )
+        .toString();
+  }
 }
