@@ -19,9 +19,10 @@ final class TicketsRepository implements ITicketsRepository {
   RequestOperation<List<TicketEntity>> getTickets() async {
     try {
       final result = await ticketsApi.getTickets();
-      final convertedValue = ticketsConverter.convertMultiple(result).toList();
+      final convertedValue =
+          ticketsConverter.convertMultiple(result.getOffers()).toList();
       return Result.ok(convertedValue);
-    } catch (_) {
+    } on Object catch (_) {
       return Result.failed(ServerFailure());
     }
   }

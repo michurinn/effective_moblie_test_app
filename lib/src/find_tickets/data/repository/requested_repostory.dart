@@ -19,8 +19,8 @@ class RequestedRepository implements IRequestedRepository {
   RequestOperation<List<RequestedOfferEntity>> getRequestedTickets() async {
     try {
       final result = await ticketsApi.getRequestedTickets();
-      return Result.ok(converter.convertMultiple(result).toList());
-    } on Exception catch (_) {
+      return Result.ok(converter.convertMultiple(result.getOffers()).toList());
+    } on Object catch (_) {
       return Result.failed(ServerFailure());
     }
   }

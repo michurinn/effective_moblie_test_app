@@ -19,7 +19,7 @@ class RecommendedRepository implements IRecommendedRepository {
   RequestOperation<List<RecommendedOfferEntity>> getRecommendedTickets() async {
     try {
       final result = await ticketsApi.getRecommendedTickets();
-      return Result.ok(converter.convertMultiple(result.offers).toList());
+      return Result.ok(converter.convertMultiple(result.getOffers()).toList());
     } on Exception catch (_) {
       return Result.failed(ServerFailure());
     }
