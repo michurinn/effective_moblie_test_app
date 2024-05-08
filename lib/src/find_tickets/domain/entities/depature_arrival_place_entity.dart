@@ -11,4 +11,10 @@ class DepatureArrivalPlaceEntity with _$DepatureArrivalPlaceEntity {
     required DateTime date,
     required Airports airport,
   }) = _DepatureArrivalPlaceEntity;
+
+  factory DepatureArrivalPlaceEntity.fromMap(Map<String, dynamic> map) => DepatureArrivalPlaceEntity(
+    city: map['town'] as String,
+    date: DateTime.parse(map['date'] as String),
+    airport: Airports.values.firstWhere((e) => e.name == map['airport']),
+  );
 }

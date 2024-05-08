@@ -103,7 +103,10 @@ class __$$HandLuggageEntityImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$HandLuggageEntityImpl implements _HandLuggageEntity {
-  const _$HandLuggageEntityImpl({required this.hasHandLuggage, this.size});
+  const _$HandLuggageEntityImpl({required this.hasHandLuggage, this.size})
+      : assert(
+            (hasHandLuggage == true && size != null) || hasHandLuggage == false,
+            'HandLuggage must contain info about a size if included');
 
   @override
   final bool hasHandLuggage;

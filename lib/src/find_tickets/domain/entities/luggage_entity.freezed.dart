@@ -103,7 +103,9 @@ class __$$LuggageEntityImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LuggageEntityImpl implements _LuggageEntity {
-  const _$LuggageEntityImpl({required this.hasLuggage, this.price});
+  const _$LuggageEntityImpl({required this.hasLuggage, this.price})
+      : assert((hasLuggage == false && price != null) || hasLuggage == true,
+            'Luggage can not be false without the price');
 
   @override
   final bool hasLuggage;

@@ -17,16 +17,17 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$TicketEntity {
   int get id => throw _privateConstructorUsedError;
-  String get badge => throw _privateConstructorUsedError;
+  String? get badge => throw _privateConstructorUsedError;
   int get price => throw _privateConstructorUsedError;
   String get providerName => throw _privateConstructorUsedError;
   String get company => throw _privateConstructorUsedError;
-  Map<String, dynamic> get depature => throw _privateConstructorUsedError;
-  Map<String, dynamic> get arrival => throw _privateConstructorUsedError;
+  DepatureArrivalPlaceEntity get departure =>
+      throw _privateConstructorUsedError;
+  DepatureArrivalPlaceEntity get arrival => throw _privateConstructorUsedError;
   bool get hasTransfer => throw _privateConstructorUsedError;
   bool get hasVisaTransfer => throw _privateConstructorUsedError;
-  Map<String, dynamic> get luggage => throw _privateConstructorUsedError;
-  Map<String, dynamic> get handLuggage => throw _privateConstructorUsedError;
+  LuggageEntity get luggage => throw _privateConstructorUsedError;
+  HandLuggageEntity get handLuggage => throw _privateConstructorUsedError;
   bool get isReturnable => throw _privateConstructorUsedError;
   bool get isExchangable => throw _privateConstructorUsedError;
 
@@ -43,18 +44,23 @@ abstract class $TicketEntityCopyWith<$Res> {
   @useResult
   $Res call(
       {int id,
-      String badge,
+      String? badge,
       int price,
       String providerName,
       String company,
-      Map<String, dynamic> depature,
-      Map<String, dynamic> arrival,
+      DepatureArrivalPlaceEntity departure,
+      DepatureArrivalPlaceEntity arrival,
       bool hasTransfer,
       bool hasVisaTransfer,
-      Map<String, dynamic> luggage,
-      Map<String, dynamic> handLuggage,
+      LuggageEntity luggage,
+      HandLuggageEntity handLuggage,
       bool isReturnable,
       bool isExchangable});
+
+  $DepatureArrivalPlaceEntityCopyWith<$Res> get departure;
+  $DepatureArrivalPlaceEntityCopyWith<$Res> get arrival;
+  $LuggageEntityCopyWith<$Res> get luggage;
+  $HandLuggageEntityCopyWith<$Res> get handLuggage;
 }
 
 /// @nodoc
@@ -71,11 +77,11 @@ class _$TicketEntityCopyWithImpl<$Res, $Val extends TicketEntity>
   @override
   $Res call({
     Object? id = null,
-    Object? badge = null,
+    Object? badge = freezed,
     Object? price = null,
     Object? providerName = null,
     Object? company = null,
-    Object? depature = null,
+    Object? departure = null,
     Object? arrival = null,
     Object? hasTransfer = null,
     Object? hasVisaTransfer = null,
@@ -89,10 +95,10 @@ class _$TicketEntityCopyWithImpl<$Res, $Val extends TicketEntity>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      badge: null == badge
+      badge: freezed == badge
           ? _value.badge
           : badge // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
@@ -105,14 +111,14 @@ class _$TicketEntityCopyWithImpl<$Res, $Val extends TicketEntity>
           ? _value.company
           : company // ignore: cast_nullable_to_non_nullable
               as String,
-      depature: null == depature
-          ? _value.depature
-          : depature // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+      departure: null == departure
+          ? _value.departure
+          : departure // ignore: cast_nullable_to_non_nullable
+              as DepatureArrivalPlaceEntity,
       arrival: null == arrival
           ? _value.arrival
           : arrival // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as DepatureArrivalPlaceEntity,
       hasTransfer: null == hasTransfer
           ? _value.hasTransfer
           : hasTransfer // ignore: cast_nullable_to_non_nullable
@@ -124,11 +130,11 @@ class _$TicketEntityCopyWithImpl<$Res, $Val extends TicketEntity>
       luggage: null == luggage
           ? _value.luggage
           : luggage // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as LuggageEntity,
       handLuggage: null == handLuggage
           ? _value.handLuggage
           : handLuggage // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as HandLuggageEntity,
       isReturnable: null == isReturnable
           ? _value.isReturnable
           : isReturnable // ignore: cast_nullable_to_non_nullable
@@ -138,6 +144,38 @@ class _$TicketEntityCopyWithImpl<$Res, $Val extends TicketEntity>
           : isExchangable // ignore: cast_nullable_to_non_nullable
               as bool,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DepatureArrivalPlaceEntityCopyWith<$Res> get departure {
+    return $DepatureArrivalPlaceEntityCopyWith<$Res>(_value.departure, (value) {
+      return _then(_value.copyWith(departure: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DepatureArrivalPlaceEntityCopyWith<$Res> get arrival {
+    return $DepatureArrivalPlaceEntityCopyWith<$Res>(_value.arrival, (value) {
+      return _then(_value.copyWith(arrival: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $LuggageEntityCopyWith<$Res> get luggage {
+    return $LuggageEntityCopyWith<$Res>(_value.luggage, (value) {
+      return _then(_value.copyWith(luggage: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $HandLuggageEntityCopyWith<$Res> get handLuggage {
+    return $HandLuggageEntityCopyWith<$Res>(_value.handLuggage, (value) {
+      return _then(_value.copyWith(handLuggage: value) as $Val);
+    });
   }
 }
 
@@ -151,18 +189,27 @@ abstract class _$$TicketEntityImplCopyWith<$Res>
   @useResult
   $Res call(
       {int id,
-      String badge,
+      String? badge,
       int price,
       String providerName,
       String company,
-      Map<String, dynamic> depature,
-      Map<String, dynamic> arrival,
+      DepatureArrivalPlaceEntity departure,
+      DepatureArrivalPlaceEntity arrival,
       bool hasTransfer,
       bool hasVisaTransfer,
-      Map<String, dynamic> luggage,
-      Map<String, dynamic> handLuggage,
+      LuggageEntity luggage,
+      HandLuggageEntity handLuggage,
       bool isReturnable,
       bool isExchangable});
+
+  @override
+  $DepatureArrivalPlaceEntityCopyWith<$Res> get departure;
+  @override
+  $DepatureArrivalPlaceEntityCopyWith<$Res> get arrival;
+  @override
+  $LuggageEntityCopyWith<$Res> get luggage;
+  @override
+  $HandLuggageEntityCopyWith<$Res> get handLuggage;
 }
 
 /// @nodoc
@@ -177,11 +224,11 @@ class __$$TicketEntityImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? badge = null,
+    Object? badge = freezed,
     Object? price = null,
     Object? providerName = null,
     Object? company = null,
-    Object? depature = null,
+    Object? departure = null,
     Object? arrival = null,
     Object? hasTransfer = null,
     Object? hasVisaTransfer = null,
@@ -195,10 +242,10 @@ class __$$TicketEntityImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      badge: null == badge
+      badge: freezed == badge
           ? _value.badge
           : badge // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
@@ -211,14 +258,14 @@ class __$$TicketEntityImplCopyWithImpl<$Res>
           ? _value.company
           : company // ignore: cast_nullable_to_non_nullable
               as String,
-      depature: null == depature
-          ? _value._depature
-          : depature // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+      departure: null == departure
+          ? _value.departure
+          : departure // ignore: cast_nullable_to_non_nullable
+              as DepatureArrivalPlaceEntity,
       arrival: null == arrival
-          ? _value._arrival
+          ? _value.arrival
           : arrival // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as DepatureArrivalPlaceEntity,
       hasTransfer: null == hasTransfer
           ? _value.hasTransfer
           : hasTransfer // ignore: cast_nullable_to_non_nullable
@@ -228,13 +275,13 @@ class __$$TicketEntityImplCopyWithImpl<$Res>
           : hasVisaTransfer // ignore: cast_nullable_to_non_nullable
               as bool,
       luggage: null == luggage
-          ? _value._luggage
+          ? _value.luggage
           : luggage // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as LuggageEntity,
       handLuggage: null == handLuggage
-          ? _value._handLuggage
+          ? _value.handLuggage
           : handLuggage // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as HandLuggageEntity,
       isReturnable: null == isReturnable
           ? _value.isReturnable
           : isReturnable // ignore: cast_nullable_to_non_nullable
@@ -256,65 +303,37 @@ class _$TicketEntityImpl implements _TicketEntity {
       required this.price,
       required this.providerName,
       required this.company,
-      required final Map<String, dynamic> depature,
-      required final Map<String, dynamic> arrival,
+      required this.departure,
+      required this.arrival,
       required this.hasTransfer,
       required this.hasVisaTransfer,
-      required final Map<String, dynamic> luggage,
-      required final Map<String, dynamic> handLuggage,
+      required this.luggage,
+      required this.handLuggage,
       required this.isReturnable,
-      required this.isExchangable})
-      : _depature = depature,
-        _arrival = arrival,
-        _luggage = luggage,
-        _handLuggage = handLuggage;
+      required this.isExchangable});
 
   @override
   final int id;
   @override
-  final String badge;
+  final String? badge;
   @override
   final int price;
   @override
   final String providerName;
   @override
   final String company;
-  final Map<String, dynamic> _depature;
   @override
-  Map<String, dynamic> get depature {
-    if (_depature is EqualUnmodifiableMapView) return _depature;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_depature);
-  }
-
-  final Map<String, dynamic> _arrival;
+  final DepatureArrivalPlaceEntity departure;
   @override
-  Map<String, dynamic> get arrival {
-    if (_arrival is EqualUnmodifiableMapView) return _arrival;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_arrival);
-  }
-
+  final DepatureArrivalPlaceEntity arrival;
   @override
   final bool hasTransfer;
   @override
   final bool hasVisaTransfer;
-  final Map<String, dynamic> _luggage;
   @override
-  Map<String, dynamic> get luggage {
-    if (_luggage is EqualUnmodifiableMapView) return _luggage;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_luggage);
-  }
-
-  final Map<String, dynamic> _handLuggage;
+  final LuggageEntity luggage;
   @override
-  Map<String, dynamic> get handLuggage {
-    if (_handLuggage is EqualUnmodifiableMapView) return _handLuggage;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_handLuggage);
-  }
-
+  final HandLuggageEntity handLuggage;
   @override
   final bool isReturnable;
   @override
@@ -322,7 +341,7 @@ class _$TicketEntityImpl implements _TicketEntity {
 
   @override
   String toString() {
-    return 'TicketEntity(id: $id, badge: $badge, price: $price, providerName: $providerName, company: $company, depature: $depature, arrival: $arrival, hasTransfer: $hasTransfer, hasVisaTransfer: $hasVisaTransfer, luggage: $luggage, handLuggage: $handLuggage, isReturnable: $isReturnable, isExchangable: $isExchangable)';
+    return 'TicketEntity(id: $id, badge: $badge, price: $price, providerName: $providerName, company: $company, departure: $departure, arrival: $arrival, hasTransfer: $hasTransfer, hasVisaTransfer: $hasVisaTransfer, luggage: $luggage, handLuggage: $handLuggage, isReturnable: $isReturnable, isExchangable: $isExchangable)';
   }
 
   @override
@@ -336,15 +355,16 @@ class _$TicketEntityImpl implements _TicketEntity {
             (identical(other.providerName, providerName) ||
                 other.providerName == providerName) &&
             (identical(other.company, company) || other.company == company) &&
-            const DeepCollectionEquality().equals(other._depature, _depature) &&
-            const DeepCollectionEquality().equals(other._arrival, _arrival) &&
+            (identical(other.departure, departure) ||
+                other.departure == departure) &&
+            (identical(other.arrival, arrival) || other.arrival == arrival) &&
             (identical(other.hasTransfer, hasTransfer) ||
                 other.hasTransfer == hasTransfer) &&
             (identical(other.hasVisaTransfer, hasVisaTransfer) ||
                 other.hasVisaTransfer == hasVisaTransfer) &&
-            const DeepCollectionEquality().equals(other._luggage, _luggage) &&
-            const DeepCollectionEquality()
-                .equals(other._handLuggage, _handLuggage) &&
+            (identical(other.luggage, luggage) || other.luggage == luggage) &&
+            (identical(other.handLuggage, handLuggage) ||
+                other.handLuggage == handLuggage) &&
             (identical(other.isReturnable, isReturnable) ||
                 other.isReturnable == isReturnable) &&
             (identical(other.isExchangable, isExchangable) ||
@@ -359,12 +379,12 @@ class _$TicketEntityImpl implements _TicketEntity {
       price,
       providerName,
       company,
-      const DeepCollectionEquality().hash(_depature),
-      const DeepCollectionEquality().hash(_arrival),
+      departure,
+      arrival,
       hasTransfer,
       hasVisaTransfer,
-      const DeepCollectionEquality().hash(_luggage),
-      const DeepCollectionEquality().hash(_handLuggage),
+      luggage,
+      handLuggage,
       isReturnable,
       isExchangable);
 
@@ -378,23 +398,23 @@ class _$TicketEntityImpl implements _TicketEntity {
 abstract class _TicketEntity implements TicketEntity {
   const factory _TicketEntity(
       {required final int id,
-      required final String badge,
+      required final String? badge,
       required final int price,
       required final String providerName,
       required final String company,
-      required final Map<String, dynamic> depature,
-      required final Map<String, dynamic> arrival,
+      required final DepatureArrivalPlaceEntity departure,
+      required final DepatureArrivalPlaceEntity arrival,
       required final bool hasTransfer,
       required final bool hasVisaTransfer,
-      required final Map<String, dynamic> luggage,
-      required final Map<String, dynamic> handLuggage,
+      required final LuggageEntity luggage,
+      required final HandLuggageEntity handLuggage,
       required final bool isReturnable,
       required final bool isExchangable}) = _$TicketEntityImpl;
 
   @override
   int get id;
   @override
-  String get badge;
+  String? get badge;
   @override
   int get price;
   @override
@@ -402,17 +422,17 @@ abstract class _TicketEntity implements TicketEntity {
   @override
   String get company;
   @override
-  Map<String, dynamic> get depature;
+  DepatureArrivalPlaceEntity get departure;
   @override
-  Map<String, dynamic> get arrival;
+  DepatureArrivalPlaceEntity get arrival;
   @override
   bool get hasTransfer;
   @override
   bool get hasVisaTransfer;
   @override
-  Map<String, dynamic> get luggage;
+  LuggageEntity get luggage;
   @override
-  Map<String, dynamic> get handLuggage;
+  HandLuggageEntity get handLuggage;
   @override
   bool get isReturnable;
   @override
