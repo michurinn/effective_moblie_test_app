@@ -1,3 +1,4 @@
+import 'package:effective_test_work/src/find_tickets/data/model/list_requested_offer_dto.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:effective_test_work/api/tickets_api.dart';
 import 'package:effective_test_work/core/architecture/domain/entity/result.dart';
@@ -38,8 +39,8 @@ void main() {
 
     test('Should return Result.fail if Api returns result', () async {
       // Arrange
-      when(ticketsApi.getRequestedTickets())
-          .thenAnswer((realInvocation) => Future.value([]));
+      when(ticketsApi.getRequestedTickets()).thenAnswer((realInvocation) =>
+          Future.value(ListRequestedOfferDTO(ticketOffers: [])));
       // Act
       final result = await requestedRepository.getRequestedTickets();
       // Assert
@@ -64,8 +65,8 @@ void main() {
 
     test('Should return Result.fail if Api returns result', () async {
       // Arrange
-      when(ticketsApi.getRequestedTickets())
-          .thenAnswer((_) => Future.value([]));
+      when(ticketsApi.getRequestedTickets()).thenAnswer(
+          (_) => Future.value(ListRequestedOfferDTO(ticketOffers: [])));
       // Act
       final result = await requestedRepository.getRequestedTickets();
       // Assert

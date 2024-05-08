@@ -3,17 +3,19 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i7;
+import 'dart:async' as _i9;
 
-import 'package:effective_test_work/api/tickets_api.dart' as _i6;
+import 'package:effective_test_work/api/tickets_api.dart' as _i8;
 import 'package:effective_test_work/src/find_tickets/data/model/list_recommended_offer_dto.dart'
-    as _i3;
-import 'package:effective_test_work/src/find_tickets/data/model/requested_offer_dto.dart'
-    as _i8;
-import 'package:effective_test_work/src/find_tickets/data/model/ticket_dto.dart'
-    as _i5;
-import 'package:effective_test_work/src/find_tickets/domain/converters/ticket_converter.dart'
     as _i4;
+import 'package:effective_test_work/src/find_tickets/data/model/list_requested_offer_dto.dart'
+    as _i5;
+import 'package:effective_test_work/src/find_tickets/data/model/list_tickets_dto.dart'
+    as _i3;
+import 'package:effective_test_work/src/find_tickets/data/model/ticket_dto.dart'
+    as _i7;
+import 'package:effective_test_work/src/find_tickets/domain/converters/ticket_converter.dart'
+    as _i6;
 import 'package:effective_test_work/src/find_tickets/domain/entities/ticket_entity.dart'
     as _i2;
 import 'package:mockito/mockito.dart' as _i1;
@@ -41,9 +43,31 @@ class _FakeTicketEntity_0 extends _i1.SmartFake implements _i2.TicketEntity {
         );
 }
 
-class _FakeListRecommendedOfferDTO_1 extends _i1.SmartFake
-    implements _i3.ListRecommendedOfferDTO {
-  _FakeListRecommendedOfferDTO_1(
+class _FakeListTicketsDTO_1 extends _i1.SmartFake
+    implements _i3.ListTicketsDTO {
+  _FakeListTicketsDTO_1(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
+class _FakeListRecommendedOfferDTO_2 extends _i1.SmartFake
+    implements _i4.ListRecommendedOfferDTO {
+  _FakeListRecommendedOfferDTO_2(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
+class _FakeListRequestedOfferDTO_3 extends _i1.SmartFake
+    implements _i5.ListRequestedOfferDTO {
+  _FakeListRequestedOfferDTO_3(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -55,13 +79,13 @@ class _FakeListRecommendedOfferDTO_1 extends _i1.SmartFake
 /// A class which mocks [TicketConverter].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockTicketConverter extends _i1.Mock implements _i4.TicketConverter {
+class MockTicketConverter extends _i1.Mock implements _i6.TicketConverter {
   MockTicketConverter() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i2.TicketEntity convert(_i5.TicketDTO? input) => (super.noSuchMethod(
+  _i2.TicketEntity convert(_i7.TicketDTO? input) => (super.noSuchMethod(
         Invocation.method(
           #convert,
           [input],
@@ -77,7 +101,7 @@ class MockTicketConverter extends _i1.Mock implements _i4.TicketConverter {
 
   @override
   Iterable<_i2.TicketEntity> convertMultiple(
-          Iterable<_i5.TicketDTO>? inputList) =>
+          Iterable<_i7.TicketDTO>? inputList) =>
       (super.noSuchMethod(
         Invocation.method(
           #convertMultiple,
@@ -90,45 +114,57 @@ class MockTicketConverter extends _i1.Mock implements _i4.TicketConverter {
 /// A class which mocks [ITicketsApi].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockITicketsApi extends _i1.Mock implements _i6.ITicketsApi {
+class MockITicketsApi extends _i1.Mock implements _i8.ITicketsApi {
   MockITicketsApi() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i7.Future<List<_i5.TicketDTO>> getTickets() => (super.noSuchMethod(
+  _i9.Future<_i3.ListTicketsDTO> getTickets() => (super.noSuchMethod(
         Invocation.method(
           #getTickets,
           [],
         ),
-        returnValue: _i7.Future<List<_i5.TicketDTO>>.value(<_i5.TicketDTO>[]),
-      ) as _i7.Future<List<_i5.TicketDTO>>);
+        returnValue: _i9.Future<_i3.ListTicketsDTO>.value(_FakeListTicketsDTO_1(
+          this,
+          Invocation.method(
+            #getTickets,
+            [],
+          ),
+        )),
+      ) as _i9.Future<_i3.ListTicketsDTO>);
 
   @override
-  _i7.Future<_i3.ListRecommendedOfferDTO> getRecommendedTickets() =>
+  _i9.Future<_i4.ListRecommendedOfferDTO> getRecommendedTickets() =>
       (super.noSuchMethod(
         Invocation.method(
           #getRecommendedTickets,
           [],
         ),
-        returnValue: _i7.Future<_i3.ListRecommendedOfferDTO>.value(
-            _FakeListRecommendedOfferDTO_1(
+        returnValue: _i9.Future<_i4.ListRecommendedOfferDTO>.value(
+            _FakeListRecommendedOfferDTO_2(
           this,
           Invocation.method(
             #getRecommendedTickets,
             [],
           ),
         )),
-      ) as _i7.Future<_i3.ListRecommendedOfferDTO>);
+      ) as _i9.Future<_i4.ListRecommendedOfferDTO>);
 
   @override
-  _i7.Future<List<_i8.RequestedOfferDTO>> getRequestedTickets() =>
+  _i9.Future<_i5.ListRequestedOfferDTO> getRequestedTickets() =>
       (super.noSuchMethod(
         Invocation.method(
           #getRequestedTickets,
           [],
         ),
-        returnValue: _i7.Future<List<_i8.RequestedOfferDTO>>.value(
-            <_i8.RequestedOfferDTO>[]),
-      ) as _i7.Future<List<_i8.RequestedOfferDTO>>);
+        returnValue: _i9.Future<_i5.ListRequestedOfferDTO>.value(
+            _FakeListRequestedOfferDTO_3(
+          this,
+          Invocation.method(
+            #getRequestedTickets,
+            [],
+          ),
+        )),
+      ) as _i9.Future<_i5.ListRequestedOfferDTO>);
 }
