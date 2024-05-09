@@ -14,7 +14,9 @@ class FindTicketsFlow extends StatelessWidget implements AutoRouteWrapper {
 
   @override
   Widget build(BuildContext context) {
-    return const FindTicketsPage();
+    return const FindTicketsPage(
+      departureInitialString: 'Minsk',
+    );
   }
 
   @override

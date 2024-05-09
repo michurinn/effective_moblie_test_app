@@ -42,7 +42,9 @@ class RecommendedOffersBloc
     );
     final result = await recommendedRepository.getRecommendedTickets();
     final state = switch (result) {
-      ResultOk<List<RecommendedOfferEntity>, Failure>() => Loaded(result.data),
+      // Takes first 3 items
+      ResultOk<List<RecommendedOfferEntity>, Failure>() =>
+        Loaded(result.data.take(3).toList()),
       ResultFailed<List<RecommendedOfferEntity>, Failure>() =>
         Error(SERVER_FAILURE_MESSAGE),
     };
