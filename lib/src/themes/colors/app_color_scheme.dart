@@ -131,36 +131,48 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
   /// The color of the shimmer.
   final Color shimmer;
 
+  final Color buttonRed;
+
+  final Color buttonBlue;
+
+  final Color buttonDarkBlue;
+
+  final Color buttonGreen;
+
   /// Base dark theme version.
   AppColorScheme.dark()
-      : primary = DarkColorPalette.smokyBlack,
+      : primary = DarkColorPalette.white,
         onPrimary = DarkColorPalette.white,
-        secondary = DarkColorPalette.inchworm,
-        onSecondary = DarkColorPalette.inchworm,
-        surface = DarkColorPalette.raisinBlack,
-        surfaceSecondary = DarkColorPalette.raisinBlack,
+        secondary = DarkColorPalette.arsenic,
+        onSecondary = DarkColorPalette.arsenic,
+        surface = DarkColorPalette.grey6,
+        surfaceSecondary = DarkColorPalette.grey,
         onSurface = DarkColorPalette.white,
         background = DarkColorPalette.smokyBlack,
-        backgroundSecondary = DarkColorPalette.maroon,
+        backgroundSecondary = DarkColorPalette.brightPlatinum,
         backgroundTertiary = DarkColorPalette.raisinBlack,
         onBackground = DarkColorPalette.white,
-        onBackgroundSecondary = DarkColorPalette.white,
-        danger = DarkColorPalette.brinkPink,
-        dangerSecondary = DarkColorPalette.cyclamen,
+        onBackgroundSecondary = DarkColorPalette.grey6,
+        danger = DarkColorPalette.grey6,
+        dangerSecondary = DarkColorPalette.grey4,
         onDanger = DarkColorPalette.white,
-        textField = DarkColorPalette.lightSilver,
+        textField = DarkColorPalette.arsenic,
         textFieldLabel = DarkColorPalette.white,
         textFieldHelper = DarkColorPalette.black,
         frameTextFieldSecondary = DarkColorPalette.lightSilver,
-        inactive = DarkColorPalette.black,
-        positive = DarkColorPalette.inchworm,
+        inactive = DarkColorPalette.grey5,
+        positive = DarkColorPalette.greyWhite,
         onPositive = DarkColorPalette.black,
         skeletonPrimary = DarkColorPalette.black.withOpacity(_skeletonOpacity),
         skeletonOnPrimary = DarkColorPalette.white,
-        skeletonSecondary = DarkColorPalette.raisinBlack,
-        skeletonTertiary = DarkColorPalette.lightSilver,
+        skeletonSecondary = DarkColorPalette.grey4,
+        skeletonTertiary = DarkColorPalette.greyWhite,
         tetradicBackground = DarkColorPalette.etonBlue,
-        shimmer = DarkColorPalette.plum;
+        buttonBlue = DarkColorPalette.blue,
+        buttonDarkBlue = DarkColorPalette.darkBlue,
+        buttonRed = DarkColorPalette.red,
+        buttonGreen = DarkColorPalette.green,
+        shimmer = DarkColorPalette.brightPlatinum;
 
   const AppColorScheme._({
     required this.primary,
@@ -190,6 +202,10 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
     required this.skeletonSecondary,
     required this.skeletonTertiary,
     required this.tetradicBackground,
+    required this.buttonBlue,
+    required this.buttonDarkBlue,
+    required this.buttonRed,
+    required this.buttonGreen,
     required this.shimmer,
   });
 
@@ -222,6 +238,10 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
     Color? skeletonSecondary,
     Color? skeletonTertiary,
     Color? tetradicBackground,
+    Color? buttonBlue,
+    Color? buttonDarkBlue,
+    Color? buttonRed,
+    Color? buttonGreen,
     Color? shimmer,
   }) {
     return AppColorScheme._(
@@ -254,6 +274,10 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
       skeletonSecondary: skeletonSecondary ?? this.skeletonSecondary,
       skeletonTertiary: skeletonTertiary ?? this.skeletonTertiary,
       tetradicBackground: tetradicBackground ?? this.tetradicBackground,
+      buttonBlue: buttonBlue ?? this.buttonBlue,
+      buttonDarkBlue: buttonDarkBlue ?? this.buttonDarkBlue,
+      buttonRed: buttonRed ?? this.buttonRed,
+      buttonGreen: buttonGreen ?? this.buttonGreen,
       shimmer: shimmer ?? this.shimmer,
     );
   }
@@ -304,6 +328,10 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
           Color.lerp(skeletonTertiary, other.skeletonTertiary, t)!,
       tetradicBackground:
           Color.lerp(tetradicBackground, other.tetradicBackground, t)!,
+      buttonBlue: Color.lerp(buttonBlue, other.buttonBlue, t)!,
+      buttonDarkBlue: Color.lerp(buttonDarkBlue, other.buttonDarkBlue, t)!,
+      buttonRed: Color.lerp(buttonRed, other.buttonRed, t)!,
+      buttonGreen: Color.lerp(buttonGreen, other.buttonGreen, t)!,
       shimmer: Color.lerp(shimmer, other.shimmer, t)!,
     );
   }

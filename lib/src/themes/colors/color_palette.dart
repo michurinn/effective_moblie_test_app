@@ -5,25 +5,27 @@ import 'package:flutter/material.dart';
 ///
 /// App Dark colors palette.
 abstract class DarkColorPalette {
-  /// Han Purple
-  ///
-  /// https://www.color-name.com/hex/6D38FF.
-  static const hanPurple = Color(0xFF6D38FF);
+  static const grey = Color(0xFF2F3035);
+  static const grey5 = Color(0xFF5E5F61);
+
+  static const green = Color(0xFF3A633B);
+  static const blue = Color(0xFF2261BC);
+  static const darkBlue = Color(0xFF00427D);
+  static const red = Color(0xFFFF5E5E);
 
   /// Inchworm
   ///
-  /// https://www.color-name.com/hex/C6FF57.
-  static const inchworm = Color(0xFFC6FF57);
+  /// https://www.color-name.com/hex/3e3f43
+  static const arsenic = Color(0xFF43423E);
 
-  /// Maroon
+  /// Bright Platinum Color
   ///
-  /// https://www.color-name.com/hex/7B0008.
-  static const maroon = Color(0xFF7B0008);
+  /// https://www.color-name.com/bright-platinum.color
+  static const brightPlatinum = Color(0xFFEFF3EE);
 
-  /// Brink Pink
-  ///
-  /// https://www.color-name.com/hex/FF607D.
-  static const brinkPink = Color(0xFFFF607D);
+  static const grey6 = Color(0xFF9F9F9F);
+
+  static const greyWhite = Color(0xFFD9D9D9);
 
   /// Raisin Black
   ///
@@ -35,10 +37,7 @@ abstract class DarkColorPalette {
   /// https://www.color-name.com/hex/D6D6D6.
   static const lightSilver = Color(0xFFD6D6D6);
 
-  /// Cyclamen
-  ///
-  /// https://www.color-name.com/hex/FF79A8.
-  static const cyclamen = Color(0xFFFF79A8);
+  static const grey4 = Color(0xFF3E3F43);
 
   /// Eton Blue
   ///
@@ -60,7 +59,7 @@ abstract class DarkColorPalette {
   /// https://www.color-name.com/hex/561E43.
   static const brownChocolate = Color(0xFF561E43);
 
-   /// Smoky black
+  /// Smoky black
   ///
   /// https://www.color-name.com/hex/0c0c0c
   static const smokyBlack = Color(0xFF0C0C0C);

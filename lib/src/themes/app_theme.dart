@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 abstract class AppThemeData {
   /// Dark theme configuration.
   static final darkTheme = ThemeData(
+    fontFamily: 'SF-Pro-Display',
     extensions: [_darkColorScheme, _textScheme],
     brightness: Brightness.dark,
     colorScheme: ColorScheme(
@@ -21,10 +22,15 @@ abstract class AppThemeData {
       onBackground: _darkColorScheme.onBackground,
       surface: _darkColorScheme.surface,
       onSurface: _darkColorScheme.onSurface,
+      tertiary: _darkColorScheme.shimmer,
+    ),
+    bottomSheetTheme: BottomSheetThemeData(
+      backgroundColor: _darkColorScheme.background,
     ),
     scaffoldBackgroundColor: _darkColorScheme.background,
     appBarTheme: AppBarTheme(
-      color: _darkColorScheme.primary,
+      backgroundColor: _darkColorScheme.background,
+      //color: _darkColorScheme.primary,
       elevation: AppSizes.double0,
       iconTheme: IconThemeData(
         color: _darkColorScheme.onPrimary,
@@ -34,12 +40,6 @@ abstract class AppThemeData {
       backgroundColor: _darkColorScheme.background,
       selectedItemColor: _darkColorScheme.primary,
       unselectedItemColor: _darkColorScheme.onBackground,
-    ),
-    snackBarTheme: SnackBarThemeData(
-      backgroundColor: _darkColorScheme.primary,
-      contentTextStyle: TextStyle(
-        color: _darkColorScheme.onPrimary,
-      ),
     ),
   );
 
