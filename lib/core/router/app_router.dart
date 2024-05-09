@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:effective_test_work/core/router/app_route_paths.dart';
 import 'package:effective_test_work/src/find_tickets/di/find_tickets_flow.dart';
 import 'package:effective_test_work/src/find_tickets/di/route_settings_flow.dart';
 import 'package:effective_test_work/src/find_tickets/di/tickets_flow.dart';
@@ -21,40 +22,40 @@ class AppRouter extends _$AppRouter {
   List<AutoRoute> get routes => [
         AutoRoute(
             initial: true,
-            path: '/main',
+            path: AppRoutePaths.mainPath,
             page: MainPageRoute.page,
             children: [
               AutoRoute(
-                path: 'tickets',
+                path: AppRoutePaths.ticketInitialPath,
                 page: FindTicketsFlowRoute.page,
                 initial: true,
               ),
               AutoRoute(
-                path: 'hotels',
+                path: AppRoutePaths.hotelsPath,
                 page: HotelsPageRoute.page,
               ),
               AutoRoute(
-                path: 'feed',
+                path: AppRoutePaths.feedPath,
                 page: FeedPageRoute.page,
               ),
               AutoRoute(
-                path: 'mockWithBakcButton',
+                path: AppRoutePaths.mockWithBackButtonPath,
                 page: MockWithBackButtonPageRoute.page,
               ),
               AutoRoute(
-                path: 'subscriptions',
+                path: AppRoutePaths.subscriptionsPath,
                 page: SubscriptionsPageRoute.page,
               ),
               AutoRoute(
-                path: 'route_settings_page',
+                path: AppRoutePaths.routeSettingsPath,
                 page: RouteSettingsFlowRoute.page,
               ),
               AutoRoute(
-                path: 'profile',
+                path: AppRoutePaths.profilePath,
                 page: ProfilePageRoute.page,
               ),
               AutoRoute(
-                path: 'buy_tickets',
+                path: AppRoutePaths.buyTicketsPath,
                 page: BuyTicketsFlowRoute.page,
               ),
             ])

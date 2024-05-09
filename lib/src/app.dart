@@ -1,4 +1,5 @@
 import 'package:effective_test_work/core/router/app_router.dart';
+import 'package:effective_test_work/src/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -7,6 +8,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 class MyApp extends StatelessWidget {
   final _appRouter = AppRouter();
 
+  // ignore: public_member_api_docs
   MyApp({
     super.key,
   });
@@ -26,9 +28,9 @@ class MyApp extends StatelessWidget {
       supportedLocales: const [
         Locale('en', ''), // English, no country code
       ],
-      onGenerateTitle: (BuildContext context) =>
+      onGenerateTitle: (context) =>
           AppLocalizations.of(context)!.appTitle,
-      theme: ThemeData.light(),
+      theme: AppThemeData.darkTheme,
     );
   }
 }
