@@ -5,6 +5,7 @@ import 'package:effective_test_work/src/find_tickets/data/repository/requested_r
 import 'package:effective_test_work/src/find_tickets/domain/converters/requested_offer_converter.dart';
 import 'package:effective_test_work/src/find_tickets/presentation/pages/route_settings_page.dart';
 import 'package:effective_test_work/src/find_tickets/presentation/state_managers/requested_bloc/requested_offers_bloc.dart';
+import 'package:effective_test_work/src/find_tickets/presentation/state_managers/route_settings_change_notifier.dart/route_settings_change_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -19,9 +20,13 @@ class RouteSettingsFlow extends StatelessWidget implements AutoRouteWrapper {
 
   @override
   Widget build(BuildContext context) {
+    final storagedArrivalPlace =
+        context.read<RouteSettingsChangeNotifier>().arrivalPlace;
+    final storagedDeparturePlace =
+        context.read<RouteSettingsChangeNotifier>().departurePlace;
     return RouteSettingsPage(
-      placeOfArrival: placeOfArrival,
-      placeOfDeparture: placeOfDeparture,
+      placeOfArrival: storagedArrivalPlace ?? placeOfArrival,
+      placeOfDeparture: storagedDeparturePlace ?? placeOfDeparture,
     );
   }
 

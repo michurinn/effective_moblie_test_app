@@ -7,18 +7,21 @@ import 'package:effective_test_work/core/extensions/string_exttensions.dart';
 import 'package:effective_test_work/core/router/app_router.dart';
 import 'package:effective_test_work/src/find_tickets/domain/supporting_classes/route_arrival_class.dart';
 import 'package:effective_test_work/src/find_tickets/presentation/state_managers/recommends_bloc/recommended_offers_bloc.dart';
+import 'package:effective_test_work/src/find_tickets/presentation/state_managers/route_settings_change_notifier.dart/route_settings_change_notifier.dart';
 import 'package:effective_test_work/src/find_tickets/presentation/widgets/find_tickets_widget.dart';
 import 'package:effective_test_work/src/find_tickets/presentation/widgets/recommends_item_widget.dart';
 import 'package:effective_test_work/src/find_tickets/presentation/widgets/select_arrival_botomsheet_widget.dart';
+import 'package:effective_test_work/src/local_storage/route_default_info_storage_controller.dart';
 import 'package:effective_test_work/src/themes/colors/app_color_scheme.dart';
 import 'package:effective_test_work/src/typography/app_typography.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:shimmer/shimmer.dart';
-
+/// Home - First entry
 class FindTicketsPage extends StatelessWidget {
   final String departureInitialString;
+  /// Home - First entry
   const FindTicketsPage({
     super.key,
     required this.departureInitialString,
@@ -34,7 +37,7 @@ class FindTicketsPage extends StatelessWidget {
             Text(
               'Поиск дешевых\nавиабилетов'.hardcoded,
               style: AppTypography.title1.copyWith(
-                color: AppColorScheme.dark().skeletonTertiary,
+                color: AppColorScheme.of(context).skeletonTertiary,
               ),
               textAlign: TextAlign.center,
             ),
@@ -58,46 +61,74 @@ class FindTicketsPage extends StatelessWidget {
                     borderRadius: const BorderRadius.all(
                       Radius.circular(16),
                     ),
-                    color: AppColorScheme.dark().surfaceSecondary,
+                    color: AppColorScheme.of(context).surfaceSecondary,
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(16),
-                    child: FindTicketWidget(
-                      backgroundColor: AppColorScheme.dark().secondary,
-                      leadingSvgPath: SvgIcons.searchingIcon,
-                      departurePlace: departureInitialString,
-                      onarrivalPlaceTap: () async {
-                        final result =
-                            await showModalBottomSheet<RouteArrivalClass>(
-                          context: context,
-                          isScrollControlled: true,
-                          builder: (context) => SelectArrivalBottomSheetWidget(
-                            departurePlace: departureInitialString,
-                          ),
-                        );
-                        if (result != null) {
-                          return switch (result.arrivalTargetValue) {
-                            arrivalTarget.airport => unawaited(
-                                // ignore: use_build_context_synchronously
-                                context.router.push(
-                                  RouteSettingsFlowRoute(
-                                    placeOfDeparture: 'Minsk'.hardcoded,
-                                    placeOfArrival: result.destination ??
-                                        'ErrorDestination'.hardcoded,
-                                  ),
-                                ),
-                              ),
-                            arrivalTarget.complexRoute ||
-                            arrivalTarget.everythere ||
-                            arrivalTarget.hotSale ||
-                            arrivalTarget.weekend =>
-                              unawaited(
+                    child: ListenableBuilder(
+                      listenable: context.read<RouteSettingsChangeNotifier>(),
+                      builder: (context, _) => FindTicketWidget(
+                        backgroundColor: AppColorScheme.of(context).secondary,
+                        leadingSvgPath: SvgIcons.searchingIcon,
+                        departurePlace: departureInitialString,
+                        onArrivalPlaceTap: () async {
+                          final result =
+                              await showModalBottomSheet<RouteArrivalClass>(
+                            context: context,
+                            isScrollControlled: true,
+                            builder: (context) =>
+                                SelectArrivalBottomSheetWidget(
+                              departurePlace: departureInitialString,
+                            ),
+                          );
+                          if (result != null) {
+                            // ignore: use_build_context_synchronously
+                            if (context
+                              .read<RouteSettingsChangeNotifier>()
+                              .departurePlace == null) {
+                              // ignore: use_build_context_synchronously
+                              context
+                              .read<RouteSettingsChangeNotifier>()
+                              .setDeparturePlace(departureInitialString);
+                            }
+                            return switch (result.arrivalTargetValue) {
+                              
+                              arrivalTarget.airport => {
                                   // ignore: use_build_context_synchronously
-                                  context.router
-                                      .pushNamed('mockWithBakcButton')),
-                          };
-                        }
-                      },
+                                  context
+                                      .read<RouteSettingsChangeNotifier>()
+                                      .setArrivalPlace(result.destination),
+                                  unawaited(
+                                    // ignore: use_build_context_synchronously
+                                    context.router.push(
+                                      RouteSettingsFlowRoute(
+                                        placeOfDeparture: '',
+                                        placeOfArrival: result.destination ??
+                                            'ErrorDestination'.hardcoded,
+                                      ),
+                                    ),
+                                  ),
+                                },
+                              arrivalTarget.complexRoute ||
+                              arrivalTarget.everythere ||
+                              arrivalTarget.hotSale ||
+                              arrivalTarget.weekend =>
+                                unawaited(
+                                    // ignore: use_build_context_synchronously
+                                    context.router
+                                        .pushNamed('mockWithBakcButton')),
+                            };
+                          }
+                        },
+                        onDeparturePlaceChanged: (value) {
+                          context
+                              .read<RouteSettingsChangeNotifier>()
+                              .setDeparturePlace(value);
+                          context
+                              .read<RouteDefaultInfoController>()
+                              .saveDefaultRoute(value);
+                        },
+                      ),
                     ),
                   ),
                 ),
