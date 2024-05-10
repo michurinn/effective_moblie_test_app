@@ -1,4 +1,13 @@
 # effective_test_work
 
+Ссылка на ТЗ:
+https://docs.google.com/document/d/12Y_xmJG-B-g51Lhwm69vTf8T00mVImH5AYhZWAEX__Y/edit?usp=sharing
+Тестовое задание было реализовано на технологиях:
+1. Freezed для генерации классов
+2. Retrofit для описания API
+3. BLoC и ChangeNotifier для стейт-менеджмента
+
+Комментарии:
 1. Поскольку аэропорты хранятся в enum, нужно быть уверенным что все возможные аэропорты описаны в enum.
-//TODO: Save previous departure city in Shared Preferencies
+2. Dio следует поместить в AppScope
+3. В момент записи демо сервер возвращал 404, поэтому демонстрация записана на моковых локальных данных.
