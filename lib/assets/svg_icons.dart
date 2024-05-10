@@ -15,4 +15,7 @@ class SvgIcons {
   static const String swopeIcon = 'assets/svg/swope_arrows.svg';
   static const String everythereIcon = 'assets/svg/planet.svg';
   static const String arrivalPlaneIcon = 'assets/svg/taking_off_plane.svg';
+  static const String backArrowIcon = 'assets/svg/back_arrow.svg';
+  static const String plusIcon = 'assets/svg/plus_icon.svg';
+  static const String settingsIcon = 'assets/svg/settings.svg';
 }
