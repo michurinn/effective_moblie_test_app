@@ -1,11 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:effective_test_work/core/router/app_route_paths.dart';
 import 'package:effective_test_work/src/find_tickets/di/find_tickets_flow.dart';
+import 'package:effective_test_work/src/find_tickets/di/main_page_flow.dart';
 import 'package:effective_test_work/src/find_tickets/di/route_settings_flow.dart';
 import 'package:effective_test_work/src/find_tickets/di/tickets_flow.dart';
 import 'package:effective_test_work/src/find_tickets/presentation/pages/feed_page.dart';
 import 'package:effective_test_work/src/find_tickets/presentation/pages/hotels_page.dart';
-import 'package:effective_test_work/src/find_tickets/presentation/pages/main_page.dart';
 import 'package:effective_test_work/src/find_tickets/presentation/pages/mock_with_back_button_page.dart';
 import 'package:effective_test_work/src/find_tickets/presentation/pages/profile_page.dart';
 import 'package:effective_test_work/src/find_tickets/presentation/pages/subscriptions_page.dart';
@@ -23,7 +23,7 @@ class AppRouter extends _$AppRouter {
         AutoRoute(
             initial: true,
             path: AppRoutePaths.mainPath,
-            page: MainPageRoute.page,
+            page: MainPageFlowRoute.page,
             children: [
               AutoRoute(
                 path: AppRoutePaths.ticketInitialPath,

@@ -47,10 +47,10 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const HotelsPage(),
       );
     },
-    MainPageRoute.name: (routeData) {
+    MainPageFlowRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const MainPage(),
+        child: WrappedRoute(child: const MainPageFlow()),
       );
     },
     MockWithBackButtonPageRoute.name: (routeData) {
@@ -182,15 +182,15 @@ class HotelsPageRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [MainPage]
-class MainPageRoute extends PageRouteInfo<void> {
-  const MainPageRoute({List<PageRouteInfo>? children})
+/// [MainPageFlow]
+class MainPageFlowRoute extends PageRouteInfo<void> {
+  const MainPageFlowRoute({List<PageRouteInfo>? children})
       : super(
-          MainPageRoute.name,
+          MainPageFlowRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'MainPageRoute';
+  static const String name = 'MainPageFlowRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
