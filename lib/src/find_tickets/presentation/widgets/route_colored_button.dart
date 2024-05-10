@@ -2,6 +2,7 @@ import 'package:effective_test_work/src/typography/app_typography.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+/// Square Colored button for choosing the finding route strategy
 class RouteColoredButton extends StatelessWidget {
   final VoidCallback? onTap;
   final String label;
