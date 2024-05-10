@@ -6,7 +6,7 @@ https://docs.google.com/document/d/12Y_xmJG-B-g51Lhwm69vTf8T00mVImH5AYhZWAEX__Y/
 1. Freezed для генерации классов
 2. Retrofit для описания API
 3. BLoC и ChangeNotifier для стейт-менеджмента
-
+Demo: demo/doc_2024-05-10_21-41-04.mp4
 Комментарии:
 1. Поскольку аэропорты хранятся в enum, нужно быть уверенным что все возможные аэропорты описаны в enum.
 2. Dio следует поместить в AppScope
