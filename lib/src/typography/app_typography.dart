@@ -32,10 +32,16 @@ class AppTypography {
     height: 1.2,
   );
 
-  static const Text1 = TextStyle(
+  static const text1 = TextStyle(
     fontFamily: 'SF-Pro-Display',
     fontSize: 16,
     fontWeight: FontWeight.w600,
+    height: 1.2,
+  );
+   static const text2 = TextStyle(
+    fontFamily: 'SF-Pro-Display',
+    fontStyle: FontStyle.italic,
+    fontSize: 14,
     height: 1.2,
   );
 }

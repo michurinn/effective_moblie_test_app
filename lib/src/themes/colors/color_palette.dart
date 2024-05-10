@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 
-/// IMPORTANT! Don't use this directly for UI elements decorating.
-/// Use color scheme instead.
-///
+
 /// App Dark colors palette.
 abstract class DarkColorPalette {
   static const grey = Color(0xFF2F3035);
   static const grey5 = Color(0xFF5E5F61);
-
+  static const grey6 = Color(0xFF9F9F9F);
+  static const greyWhite = Color(0xFFD9D9D9);
   static const green = Color(0xFF3A633B);
   static const blue = Color(0xFF2261BC);
   static const darkBlue = Color(0xFF00427D);
   static const red = Color(0xFFFF5E5E);
 
-  /// Inchworm
-  ///
+
   /// https://www.color-name.com/hex/3e3f43
   static const arsenic = Color(0xFF43423E);
 
@@ -23,9 +21,7 @@ abstract class DarkColorPalette {
   /// https://www.color-name.com/bright-platinum.color
   static const brightPlatinum = Color(0xFFEFF3EE);
 
-  static const grey6 = Color(0xFF9F9F9F);
 
-  static const greyWhite = Color(0xFFD9D9D9);
 
   /// Raisin Black
   ///
