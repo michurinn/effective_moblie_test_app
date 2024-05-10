@@ -1,0 +1,28 @@
+{
+    "offers": [
+        {
+            "id": 100,
+            "price": {
+                "value": 1999
+            },
+            "town": "Москва",
+            "title": "Die Atnwoord"
+        },
+        {
+            "id": 222,
+            "price": {
+                "value": 333
+            },
+            "town": "Kiev",
+            "title": "Die Atnwoord"
+        },
+        {
+            "id": 333,
+            "price": {
+                "value": 6666
+            },
+            "town": "Grodno",
+            "title": "Die Atnwoord"
+        }
+    ]
+}
