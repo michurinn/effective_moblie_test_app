@@ -4,12 +4,15 @@ import 'package:effective_test_work/src/typography/app_typography.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+/// Widget for 'Music fly' card
 class RecommmendsItemWidget extends StatelessWidget {
   final String remotePictureUrl;
   final String artistName;
   final String arrivalPlace;
   final String price;
   final String? placeholderPicturePath;
+
+  /// Widget for 'Music fly' card
   const RecommmendsItemWidget({
     required this.remotePictureUrl,
     required this.artistName,

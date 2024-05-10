@@ -22,7 +22,7 @@ class PopularItemWidget extends StatelessWidget {
     return InkWell(
       onTap: () => onPlaceTap?.call(arrivalPlace),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8),
         child: Column(
           children: [
             Row(
@@ -63,11 +63,11 @@ class PopularItemWidget extends StatelessWidget {
                       arrivalPlace,
                       style: AppTypography.title2,
                     ),
-                    SizedBox(height: 4,),
+                    const SizedBox(height: 4,),
                     Text(
                       'Популярное направление'.hardcoded,
                       style: AppTypography.title4.copyWith(
-                        color: AppColorScheme.dark().inactive,
+                        color: AppColorScheme.of(context).inactive,
                       ),
                     ),
                   ],
@@ -75,7 +75,7 @@ class PopularItemWidget extends StatelessWidget {
               ],
             ),
             Divider(
-              color: AppColorScheme.dark().inactive,
+              color: AppColorScheme.of(context).inactive,
             )
           ],
         ),
