@@ -15,9 +15,8 @@ part 'tickets_events.dart';
 part 'tickets_state.dart';
 
 const String SERVER_FAILURE_MESSAGE = 'Server Failure';
-
-class TicketsBloc
-    extends Bloc<TicketsEvent, TicketsState> {
+/// The BLoC for getting a list of all available tickets 
+class TicketsBloc extends Bloc<TicketsEvent, TicketsState> {
   final ITicketsRepository ticketsRepository;
 
   TicketsBloc({
@@ -34,9 +33,9 @@ class TicketsBloc
   }
 
   TicketsState get initialState => Empty();
-
-  Future<void> getRecommededOffers(TicketsEvent event,
-      Emitter<TicketsState> emitter) async {
+  /// The ьуерщв for getting a list of all available tickets 
+  Future<void> getRecommededOffers(
+      TicketsEvent event, Emitter<TicketsState> emitter) async {
     emitter(
       Loading(),
     );

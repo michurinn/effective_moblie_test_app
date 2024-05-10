@@ -16,6 +16,7 @@ part 'requested_offers_state.dart';
 
 const String SERVER_FAILURE_MESSAGE = 'Server Failure';
 
+/// The BLoC for getting a list of 3 recommended tickets
 class RequestedOffersBloc
     extends Bloc<RequestedOffersEvent, RequestedOffersState> {
   final IRequestedRepository requestedRepository;
@@ -35,8 +36,9 @@ class RequestedOffersBloc
 
   RequestedOffersState get initialState => Empty();
 
-  Future<void> getRecommededOffers(RequestedOffersEvent event,
-      Emitter<RequestedOffersState> emitter) async {
+  /// The method for getting a list of 3 recommended tickets
+  Future<void> getRecommededOffers(
+      RequestedOffersEvent event, Emitter<RequestedOffersState> emitter) async {
     emitter(
       Loading(),
     );

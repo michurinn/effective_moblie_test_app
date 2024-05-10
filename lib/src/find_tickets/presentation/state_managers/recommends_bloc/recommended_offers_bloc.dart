@@ -5,21 +5,21 @@ import 'dart:async';
 // ignore: depend_on_referenced_packages
 import 'package:bloc/bloc.dart';
 import 'package:bloc_concurrency/bloc_concurrency.dart';
-import 'package:equatable/equatable.dart';
 import 'package:effective_test_work/core/architecture/domain/entity/result.dart';
 import 'package:effective_test_work/core/failtures/failures.dart';
 import 'package:effective_test_work/src/find_tickets/domain/entities/recommended_offer_entity.dart';
 import 'package:effective_test_work/src/find_tickets/domain/repositories/i_recommends_repository.dart';
+import 'package:equatable/equatable.dart';
 
 part 'recommended_offers_events.dart';
 part 'recommended_offers_state.dart';
 
 const String SERVER_FAILURE_MESSAGE = 'Server Failure';
-
+/// The Bloc for getting a list of recommended tickets by 'Music Fly Program'
 class RecommendedOffersBloc
     extends Bloc<RecommendedOffersEvent, RecommendedOffersState> {
   final IRecommendedRepository recommendedRepository;
-
+/// The Bloc for getting a list of recommended tickets by 'Music Fly Program'
   RecommendedOffersBloc({
     required this.recommendedRepository,
   }) : super(Empty()) {
@@ -34,7 +34,7 @@ class RecommendedOffersBloc
   }
 
   RecommendedOffersState get initialState => Empty();
-
+/// The method for getting a list of recommended tickets by 'Music Fly Program'
   Future<void> getRecommededOffers(RecommendedOffersEvent event,
       Emitter<RecommendedOffersState> emitter) async {
     emitter(
